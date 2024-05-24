@@ -15,7 +15,7 @@ pipeline {
 	    steps {
 		sh './jenkins/scripts/deliver.sh'
 		input message: 'Finished using the website? (Click "Proceed" to continue)'
-		sh './jenkins/scrips/kill.sh'
+		sh './jenkins/scripts/kill.sh'
 	    }
 	}
     }
