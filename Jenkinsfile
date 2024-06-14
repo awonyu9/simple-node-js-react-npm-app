@@ -18,8 +18,6 @@ pipeline {
 				sh './jenkins/scripts/kill.sh'
 			}
 		}
-    }
-	post {
 		stage('Notify Discord') {
 			steps {
 				discordSend(
@@ -29,5 +27,5 @@ pipeline {
 				)
 			}
 		}
-	}
+    }
 }
