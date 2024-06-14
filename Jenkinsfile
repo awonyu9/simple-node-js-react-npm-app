@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment {
+		DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1251172647086194828/YGgeMJ_e1mFw7jmt-UC67A17H9dw1oXyrVqKyBsqhmm3o3_ytox_1GaXNqfpa6DmHv8V"
+	}
     stages {
         stage('Build') { 
             steps {
@@ -25,7 +28,7 @@ pipeline {
 				webhookURL: "https://discord.com/api/webhooks/1251172647086194828/YGgeMJ_e1mFw7jmt-UC67A17H9dw1oXyrVqKyBsqhmm3o3_ytox_1GaXNqfpa6DmHv8V",
 				title: 'simple-node-app - Jenkins build success',
 				link: env.BUILD_URL,
-				result: SUCCESS,
+				result: "SUCCESS",
 			)
 		}
 		unsuccessful {
@@ -33,7 +36,7 @@ pipeline {
 				webhookURL: "https://discord.com/api/webhooks/1251172647086194828/YGgeMJ_e1mFw7jmt-UC67A17H9dw1oXyrVqKyBsqhmm3o3_ytox_1GaXNqfpa6DmHv8V",
 				title: "simple-node-app - Jenkins build failure",
 				link: env.BUILD_URL,
-				result: FAILURE
+				result: "FAILURE"
 			)
 		}
 	}
