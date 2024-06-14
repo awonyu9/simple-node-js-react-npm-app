@@ -22,10 +22,11 @@ pipeline {
 	post {
 		stage('Notify Discord') {
 			steps {
-				discordSend {
-					webhookURL: 'https://discord.com/api/webhooks/1251172647086194828/YGgeMJ_e1mFw7jmt-UC67A17H9dw1oXyrVqKyBsqhmm3o3_ytox_1GaXNqfpa6DmHv8V',
-					description: 'hi from *Jenkins*'
-				}
+				discordSend(
+					webhookURL: "https://discord.com/api/webhooks/1251172647086194828/YGgeMJ_e1mFw7jmt-UC67A17H9dw1oXyrVqKyBsqhmm3o3_ytox_1GaXNqfpa6DmHv8V",
+					description: "hi from *Jenkins*",
+					title: "Jenkins notification"
+				)
 			}
 		}
 	}
